@@ -27,11 +27,6 @@ const Todos = ({
     onRemove(id);
   };
 
-  const TaskRegistPart = styled.div`
-    display: flex;
-    align-items: center;
-
-  `;
 
   const RegistButton = styled.button`
     margin-left: 5px;
@@ -42,7 +37,7 @@ const Todos = ({
 
   return (
     <div>
-      <TaskRegistPart>
+      <div style={{'display':'flex', 'alignItems':'center' }}>
         <span>Type Today's todolist : </span>
         <input
           className="toDoListInput"
@@ -50,10 +45,8 @@ const Todos = ({
           value={input}
           onChange={changeInputs}
         />
-        <RegistButton type="submit" onClick={submitTask}>
-          등록
-        </RegistButton>
-      </TaskRegistPart>
+        <RegistButton onClick={submitTask}>등록</RegistButton>
+      </div>
       <div>
         {todos.map((todo) => {
           return (
